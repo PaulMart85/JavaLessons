@@ -14,12 +14,11 @@ public class AllInMain {
         System.out.println("random i = " + i);
 
         // 2. Посчитать и сохранить в n номер старшего значащего бита выпавшего числа
-        String binaryI = Integer.toString(i, 2);  // i в двоичное представление, когда говорим о битах
+        String binaryI = Integer.toBinaryString(i);  // i в двоичное представление, когда говорим о битах
         System.out.println("bit representation of i = " + binaryI);
 
-        int signSearch = binaryI.contains("-") ? 1 : 0;
-        int n = binaryI.length()-1-signSearch;  // номер старшего бита (т.е. макс степень 2-ки) - это в данном случае 
-                                                // длина строки без учета знака
+        int n = binaryI.length()-1;  // номер старшего бита (т.е. макс степень 2-ки) - это в данном случае 
+                                    // длина строки; биты, отвечающие за знак, также включил в расчет
         System.out.println("most significant bit number of i is n = " + n);        
 
         // 3. Найти все кратные n числа большие i и сохранить в массив m1

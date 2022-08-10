@@ -32,12 +32,11 @@ public class InDifferentMeths {
     }
 
     private static int mostSignificantBitNumber(int value) {
-    String binaryI = Integer.toString(value, 2);  // value в двоичное представление, когда говорим о битах
+        String binaryI = Integer.toBinaryString(value);  // i в двоичное представление, когда говорим о битах
         System.out.println("bit representation of i = " + binaryI);
 
-        int signSearch = binaryI.contains("-") ? 1 : 0;
-        return binaryI.length()-1-signSearch;  // номер старшего бита (т.е. макс степень 2-ки) - это в данном случае 
-                                                // длина строки без учета знака                                                
+        return binaryI.length()-1;  // номер старшего бита (т.е. макс степень 2-ки) - это в данном случае 
+                                    // длина строки; биты, отвечающие за знак, также включил в расчет                                                
     }
 
     private static int[] multipleAndGreaterNumbers(int n, int i) {
